@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
 :root {
-  --main-color: #7E2E84;
-  --secondary-color: #F15A23;
+  /* COLORS */
+  --main-color: #F15A23;
+  --secondary-color: #7E2E84;
   --text-color: #848383;
   --title-color: black;
-  --text-size: 1.25rem;
+
+  /* TEXT */
+  --text-small-size: 1rem;
+  --text-medium-size: 1.25rem;
+
+  /* TITLE */
   --title-large-size: 4.05rem;
   --title-medium-size: 2.5rem;
   --title-small-size: 1.55rem;
