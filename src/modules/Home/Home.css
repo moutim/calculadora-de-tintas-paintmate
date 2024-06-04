@@ -1,0 +1,29 @@
+
+.article-title {
+  text-align: center;
+  width: 70%;
+  margin: 50px auto;
+  gap: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-title-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.container-title-texts h2 {
+  font-size: var(--title-large-size);
+}
+
+.container-title-texts p {
+  font-size: var(--text-medium-size);
+}
+
+.container-title-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
