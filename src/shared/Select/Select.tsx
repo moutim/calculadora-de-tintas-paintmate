@@ -4,6 +4,7 @@ import './Select.css';
 interface Props {
   title: string;
   onChange: (value: number) => void;
+  value: number;
 }
 
 const Select: React.FC<Props> = (props) => {
@@ -18,6 +19,7 @@ const Select: React.FC<Props> = (props) => {
       <select 
         id='quantity'
         onChange={ handleSelectChange }
+        value={ props.value }
       >
         { 
           [...Array(11)].map((_, index) => (

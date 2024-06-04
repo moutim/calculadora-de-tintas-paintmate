@@ -4,6 +4,7 @@ import './Input.css';
 interface Props {
   title: string;
   onChange: (value: number) => void;
+  value: number;
 }
 
 const Input: React.FC<Props> = (props) => {
@@ -33,6 +34,7 @@ const Input: React.FC<Props> = (props) => {
         max="50"
         onChange={ handleInputChange }
         placeholder='Exemplo: 1,25'
+        value={ props.value === 0 ? '' : props.value }
       />
     </label>
   );
