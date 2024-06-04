@@ -6,14 +6,16 @@
   --secondary-color: #7E2E84;
   --text-color: #848383;
   --title-color: black;
+  --warning-background: #FEEFE9;
+  --wall-input-background: #FBFBFF;
 
   /* TEXT */
   --text-small-size: 1rem;
   --text-medium-size: 1.25rem;
 
   /* TITLE */
-  --title-large-size: 4.05rem;
-  --title-medium-size: 2.5rem;
+  --title-large-size: 3.5rem;
+  --title-medium-size: 2.0rem;
   --title-small-size: 1.55rem;
 }
 
@@ -25,4 +27,23 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.button {
+  height: 55px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+}
+
+.button-selected {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.button-not-selected {
+  border: 1px solid var(--secondary-color);
+  background-color: white;
+  color: var(--secondary-color);
 }

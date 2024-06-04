@@ -1,0 +1,39 @@
+.result-calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-calculator p {
+  font-size: var(--text-medium-size);
+}
+
+.result-calculator h6 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.container-paint-bucket {
+  border: 1px solid var(--main-color);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.container-paint-bucket figure {
+  text-align: center;
+  font-size: var(--text-medium-size);
+}
+
+.container-paint-bucket figure img {
+  margin-bottom: 10px;
+}
+
+.container-warning-paint {
+  margin: 10px 0;
+  background-color: #F2EAF3;
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 20px;
+}
