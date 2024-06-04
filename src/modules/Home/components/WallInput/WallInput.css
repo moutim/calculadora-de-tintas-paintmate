@@ -42,3 +42,9 @@
   max-width: fit-content;
   padding: 10px 20px;
 }
+
+.error-message {
+  color: red;
+  margin: 15px 0;
+  font-weight: 500;
+}

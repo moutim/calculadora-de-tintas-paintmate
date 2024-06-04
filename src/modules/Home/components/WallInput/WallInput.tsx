@@ -16,40 +16,48 @@ const WallInput: React.FC<Props> = (props) => {
   const [width, setWidth] = useState(0);
   const [doorsQuantity, setDoorsQuantity] = useState(0);
   const [windowsQuantity, setWindowsQuantity] = useState(0);
+  const [errors, setErrors] = useState<string[]>([]);
+
+  const doorArea = 1.9 * 0.8;
+  const windowArea = 1.2 * 2;
 
   useEffect(() => {
-    const calcQuantityDoorsWindows = () => {
+    const validateInputs = () => {
+      const validationErrors: string[] = [];
       const wallArea = height * width;
 
-      const maxDoorsWindowsArea = wallArea * 0.5;
+      if (wallArea < 1 || wallArea > 50) {
+        validationErrors.push('A área da parede deve estar entre 1 e 50 metros quadrados.');
+      }
 
-      const doorArea = 1.9 * 0.8;
-      const windowArea = 1.2 * 2;
+      if (height > 0 && width > 0) {
+        const maxDoorsWindowsArea = wallArea * 0.5;
+        const totalDoorsWindowsArea = (doorsQuantity * doorArea) + (windowsQuantity * windowArea);
 
-      const maxDoorsQuantity = Math.floor(maxDoorsWindowsArea / doorArea);
-      const maxWindowsQuantity = Math.floor((maxDoorsWindowsArea - maxDoorsQuantity * doorArea) / windowArea);
+        if (totalDoorsWindowsArea > maxDoorsWindowsArea) {
+          validationErrors.push('A área total das portas e janelas não deve exceder 50% da área da parede.');
+        }
 
-      const calculatedDoorsQuantity = Math.min(doorsQuantity, maxDoorsQuantity);
-      const calculatedWindowsQuantity = Math.min(windowsQuantity, maxWindowsQuantity);
+        if (doorsQuantity > 0 && height < 2.2) {
+          validationErrors.push('A altura da parede com porta deve ser, no mínimo, 30 centímetros maior que a altura da porta.');
+        }
+      }
 
-      setDoorsQuantity(calculatedDoorsQuantity);
-      setWindowsQuantity(calculatedWindowsQuantity);
+      setErrors(validationErrors);
     };
 
-    calcQuantityDoorsWindows();
-  }, [height, width, doorsQuantity, windowsQuantity]);
+    validateInputs();
+  }, [width, height, doorsQuantity, windowsQuantity, doorArea, windowArea]);
 
-  const toggleContentVisibility = () => {
-    setIsContentVisible(!isContentVisible);
-  };
+  const toggleContentVisibility = () => setIsContentVisible(!isContentVisible);
 
-  const handleHeightChange = (newValue: number) => {
-    setHeight(newValue);
-  };
+  const handleHeightChange = (newValue: number) => setHeight(newValue);
 
-  const handleWidthChange = (newValue: number) => {
-    setWidth(newValue);
-  };
+  const handleWidthChange = (newValue: number) => setWidth(newValue);
+
+  const handleDoorsQuantityChange = (newQuantity: number) => setDoorsQuantity(newQuantity);
+
+  const handleWindowsQuantityChange = (newQuantity: number) => setWindowsQuantity(newQuantity);
 
   return (
     <div className='wall-input'>
@@ -58,35 +66,44 @@ const WallInput: React.FC<Props> = (props) => {
         <img src={isContentVisible ? arrowUp : arrowDown} alt="Simbolo de uma seta para cima" />
       </div>
 
-      {isContentVisible &&
-        (
-          <>
-            <div className='container-inputs-wall'>
-              <div>
-                <Input title='Altura (m)' onChange={handleHeightChange} />
-                <Input title='Largura (m)' onChange={handleWidthChange} />
+      { isContentVisible && (
+        <>
+          { 
+            errors.length > 0 && (
+              <div className='error-messages'>
+                { 
+                  errors.map((error, index) => (
+                    <p key={ index } className='error-message'>{ error }</p>
+                  )) 
+                }
               </div>
+            ) 
+          }
+
+          <div className='container-inputs-wall'>
+            <div>
+              <Input title='Altura (m)' onChange={ handleHeightChange } />
+              <Input title='Largura (m)' onChange={ handleWidthChange } />
             </div>
+          </div>
 
-            <div className='container-inputs-wall'>
-              <h5>Portas</h5>
-
-              <div>
-                <Select title='Quantidade (u)' quantity={ 1 } />
-                <Warning content='A medida padrão da porta é 0,80m x 1,90m' />
-              </div>
+          <div className='container-inputs-wall'>
+            <h5>Portas</h5>
+            <div>
+              <Select title='Quantidade (u)' onChange={ handleDoorsQuantityChange } />
+              <Warning content='A medida padrão da porta é 1,90m x 0,80m' />
             </div>
+          </div>
 
-            <div className='container-inputs-wall'>
-              <h5>Janelas</h5>
-
-              <div>
-                <Select title='Quantidade (u)' quantity={ 1 } />
-                <Warning content='A medida padrão da janela é 2,00m x 1,20m' />
-              </div>
+          <div className='container-inputs-wall'>
+            <h5>Janelas</h5>
+            <div>
+              <Select title='Quantidade (u)' onChange={ handleWindowsQuantityChange } />
+              <Warning content='A medida padrão da janela é 1,20m x 2,00m' />
             </div>
-          </>
-        )
+          </div>
+        </>
+      )
       }
     </div>
   );
