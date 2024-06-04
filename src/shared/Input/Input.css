@@ -1,0 +1,14 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: var(--text-medium-size);
+}
+
+.input input {
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 300px;
+  margin-top: 5px;
+}

@@ -16,6 +16,7 @@
 
 .container-title-texts h2 {
   font-size: var(--title-large-size);
+  font-weight: 600;
 }
 
 .container-title-texts p {
