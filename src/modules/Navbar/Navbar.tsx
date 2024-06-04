@@ -7,16 +7,14 @@ const Navbar: React.FC = () => {
     <header className='limiter'>
       <div className='div-logo'>
         <img src={ logo } alt="Logo PaintMate" />
-        <a href="">
+        <a href="/">
           <h1>PaintMate</h1>
         </a>
       </div>
 
       <nav>
         <ul>
-          <li><a href="">Calculadora</a></li>
-          <li><a href="">Entenda o Cálculo</a></li>
-          <li><a href="">Como Medir</a></li>
+          <li><a href="/">Calculadora</a></li>
         </ul>
       </nav>
     </header>
