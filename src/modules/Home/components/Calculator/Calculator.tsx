@@ -2,6 +2,7 @@ import React from 'react';
 import './Calculator.css';
 import Warning from '../../../../shared/Warning/Warning';
 import WallInput from '../WallInput/WallInput';
+import ResultCalculator from '../ResultCalculator/ResultCalculator';
 
 const Calculator: React.FC = () => {
   return (
@@ -27,6 +28,8 @@ const Calculator: React.FC = () => {
 
         <button className='button button-selected'>Calcular</button>
       </div>
+
+      <ResultCalculator  />
     </article>
   );
 };

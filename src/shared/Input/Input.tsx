@@ -3,6 +3,7 @@ import './Input.css';
 
 interface Props {
   title: string;
+  onChange: (value: number) => void; // Optional onChange handler
 }
 
 const Input: React.FC<Props> = (props) => {
@@ -15,14 +16,22 @@ const Input: React.FC<Props> = (props) => {
     if (value > 50) {
       value = 50;
     }
-  
+
+    props.onChange(value);
+
     event.target.value = value.toString();
   };
 
   return (
     <label htmlFor={ props.title } className='input'>
-      { props.title } (m)
-      <input type="number" name="props.title" min="1" max="50" onChange={ handleInputChange } />
+      { props.title }
+      <input 
+        type="number"
+        name="props.title"
+        min="1"
+        max="50"
+        onChange={ handleInputChange }
+      />
     </label>
   );
 };

@@ -8,6 +8,12 @@
 .container-title-wall {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+.container-title-wall h4 {
+  font-size: 2.3rem;
+  font-weight: 550;
 }
 
 .container-title-wall  img {
