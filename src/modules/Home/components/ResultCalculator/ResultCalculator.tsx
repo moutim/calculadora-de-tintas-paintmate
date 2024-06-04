@@ -2,12 +2,7 @@ import React from 'react';
 import paintBucket from '../../../../assets/paint-bucket.png';
 import './ResultCalculator.css';
 
-interface Props {
-  // quantity: number;
-  // title: string;
-}
-
-const ResultCalculator: React.FC<Props> = (props) => {
+const ResultCalculator: React.FC = () => {
   return (
     <div className='result-calculator'>
       <p>Para área informada de xm², a estimativa é de:</p>

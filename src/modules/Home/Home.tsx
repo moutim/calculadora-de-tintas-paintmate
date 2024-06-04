@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import Calculator from './components/Calculator/Calculator';
+import AboutCalculation from './components/AboutCalculation/AboutCalculation';
 
 const Home: React.FC = () => {
+  const [calculatorIsVisible, setCalculatorIsVisible] = useState(true);
+
+  const changeCalculatorVisible = (value: boolean) => setCalculatorIsVisible(value);
+
   return (
     <section>
       <article className='article-title'>
@@ -12,12 +17,25 @@ const Home: React.FC = () => {
         </div>
 
         <div className='container-title-buttons'>
-          <button className='button button-selected'>Calculadora</button>
-          <button className='button button-not-selected'>Entenda o Cálculo</button>
+          <button 
+            className={`button ${calculatorIsVisible ? 'button-selected' : 'button-not-selected'}`}
+            onClick={ () => changeCalculatorVisible(true) }
+          >
+            Calculadora
+          </button>
+
+          <button 
+            className={`button ${!calculatorIsVisible ? 'button-selected' : 'button-not-selected'}`}
+            onClick={ () => changeCalculatorVisible(false) }
+          >
+            Entenda o Cálculo
+          </button>
         </div>
       </article>
 
-      <Calculator />
+      {
+        calculatorIsVisible ? <Calculator /> : <AboutCalculation />
+      }
     </section>
   );
 };
