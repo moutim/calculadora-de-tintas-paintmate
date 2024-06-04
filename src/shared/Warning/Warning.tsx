@@ -1,5 +1,6 @@
 import React from 'react';
 import warning from '../../assets/warning.svg';
+import './Warning.css';
 
 interface Props {
   content: string;

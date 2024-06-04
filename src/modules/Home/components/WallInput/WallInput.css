@@ -28,6 +28,10 @@
   margin: 20px 0;
 }
 
+.container-inputs-wall > h5 {
+  font-size: var(--title-small-size);
+}
+
 .container-inputs-wall .warning {
   max-width: fit-content;
   padding: 10px 20px;

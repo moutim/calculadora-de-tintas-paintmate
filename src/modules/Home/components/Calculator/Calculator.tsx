@@ -24,6 +24,8 @@ const Calculator: React.FC = () => {
         <WallInput 
           title='Quarta parede'
         />
+
+        <button className='button button-selected'>Calcular</button>
       </div>
     </article>
   );
