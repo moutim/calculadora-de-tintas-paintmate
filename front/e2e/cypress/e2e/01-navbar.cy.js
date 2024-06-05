@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('Testes para a Navbar', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000');

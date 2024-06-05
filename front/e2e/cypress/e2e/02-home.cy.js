@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('Testes para a página "Home"', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000');
