@@ -44,7 +44,7 @@ const Calculator: React.FC = () => {
 
       <div className='container-button-calc'>
         {
-          !filledFields && <p className='error-calc-message'>Preencha todos os campos de altura e largura para ativar o botão.</p>
+          !filledFields && <p className='error-calc-message'>Preencha todos os campos de altura e largura para realizar o cálculo.</p>
         }
         <button 
           className={`button ${filledFields ? 'button-selected' : 'button-not-selected'} `}
