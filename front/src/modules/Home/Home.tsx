@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   const changeCalculatorVisible = (value: boolean) => setCalculatorIsVisible(value);
 
   return (
-    <section>
+    <section className='section-home'>
       <article className='article-title'>
         <div className='container-title-texts'>
           <h2>Calculadora de Tinta</h2>

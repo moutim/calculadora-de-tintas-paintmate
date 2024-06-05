@@ -11,7 +11,20 @@
   margin: 20px 0;
 }
 
-.container-wall-inputs button {
+.container-button-calc button {
   font-size: 20px;
+  width: 100%;
   cursor: pointer;
+  margin: 5px 0 5px 0;
+}
+
+.container-button-calc button:disabled {
+  font-size: 20px;
+  cursor: auto;
+}
+
+.error-calc-message {
+  color: red;
+  font-size: var(--text-medium-size);
+  text-align: center;
 }
