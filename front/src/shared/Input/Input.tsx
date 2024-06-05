@@ -14,9 +14,6 @@ const Input: React.FC<Props> = (props) => {
     if (value < 1) {
       value = 1;
     }
-    if (value > 50) {
-      value = 50;
-    }
 
     props.onChange(value);
 
@@ -31,7 +28,6 @@ const Input: React.FC<Props> = (props) => {
         step="0.1"
         name={ props.title }
         min="1"
-        max="50"
         onChange={ handleInputChange }
         placeholder='Exemplo: 1,25'
         value={ props.value === 0 ? '' : props.value }
