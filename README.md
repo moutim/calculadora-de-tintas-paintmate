@@ -1,6 +1,7 @@
 
 # 1. Visão Geral do Projeto
-![image](https://github.com/moutim/calculadora-de-tintas/assets/88093439/6cb647ca-bfcb-46d1-8466-92b6a64a1d6b)
+![image](https://github.com/moutim/calculadora-de-tintas-paintmate/assets/88093439/42735a3b-3b65-4b36-8acd-2130e3587dcb)
+
 
 - **Nome do Projeto**: PaintMate 🎨✨
 
