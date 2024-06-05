@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
-import { CreateCalculatorDto } from '../src/calculator/dto/create-calculator.dto';
+import { CreateCalculatorDto } from '../src/modules/calculator/dto/create-calculator.dto';
 
 describe('CalculatorController (e2e)', () => {
   let app: INestApplication;
