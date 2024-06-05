@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Res, HttpStatus } from '@nestjs/common';
 import { CalculatorService } from './calculator.service';
 import { CreateCalculatorDto } from './dto/create-calculator.dto';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
@@ -61,7 +61,8 @@ export class CalculatorController {
     },
   })
   @Post()
-  create(@Body() createCalculatorDto: CreateCalculatorDto[]) {
-    return this.calculatorService.create(createCalculatorDto);
+  create(@Body() createCalculatorDto: CreateCalculatorDto[], @Res() res) {
+    const result = this.calculatorService.create(createCalculatorDto);
+    return res.status(HttpStatus.OK).json(result);
   }
 }
