@@ -8,6 +8,10 @@
   font-size: var(--text-medium-size);
 }
 
+.result-calculator p span {
+  font-weight: 500;
+}
+
 .result-calculator h6 {
   font-size: 2.5rem;
   font-weight: 600;
@@ -24,6 +28,10 @@
 .container-paint-bucket figure {
   text-align: center;
   font-size: var(--text-medium-size);
+}
+
+.container-paint-bucket figure figcaption {
+  font-weight: 500;
 }
 
 .container-paint-bucket figure img {

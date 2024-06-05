@@ -1,13 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Calculator.css';
 import Warning from '../../../../shared/Warning/Warning';
 import WallInput from '../WallInput/WallInput';
 import ResultCalculator from '../ResultCalculator/ResultCalculator';
 import { WallContext } from '../../context/CalculatorContext';
+import api from '../../../../utils/axios';
 
 const Calculator: React.FC = () => {
   const { walls } = useContext(WallContext);
-  console.log(walls);
+  const [resultCalc, setResultCalc] = useState(null);
+
+  const calculate = async () => {
+    const calcResult = await api.post('/calcular', walls);
+
+    setResultCalc(calcResult.data);
+  };
 
   return (
     <article>
@@ -34,10 +41,12 @@ const Calculator: React.FC = () => {
           wallIndex={ 3 }
         />
 
-        <button className='button button-selected'>Calcular</button>
+        <button className='button button-selected' onClick={ calculate }>Calcular</button>
       </div>
 
-      <ResultCalculator  />
+      {
+        resultCalc && <ResultCalculator result={ resultCalc } />
+      }
     </article>
   );
 };
