@@ -103,8 +103,12 @@
     - Abra o terminal na pasta do backend.
     - Execute o comando `npm run test:e2e` para rodar todos os testes.  🧪🔍📊
 
-Contato
-Informações de Contato: Para dúvidas e suporte, entre em contato com os mantenedores do projeto.
-Email: contato@paintmate.com
-Linkedin: 
+
+
+# Contato
+
+**Informações de Contato:** Para dúvidas e suporte, entre em contato.
+
+- **Email:** [moutimg@gmail.com](mailto:moutimg@gmail.com)
+- **LinkedIn:** [https://www.linkedin.com/in/vitormoutim/](https://www.linkedin.com/in/vitormoutim/)
 
