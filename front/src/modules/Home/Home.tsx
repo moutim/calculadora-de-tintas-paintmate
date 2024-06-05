@@ -4,7 +4,7 @@ import Calculator from './components/Calculator/Calculator';
 
 const Home: React.FC = () => {
   return (
-    <section>
+    <section className='section-home'>
       <article className='article-title'>
         <div className='container-title-texts'>
           <h2>Calculadora de Tinta</h2>

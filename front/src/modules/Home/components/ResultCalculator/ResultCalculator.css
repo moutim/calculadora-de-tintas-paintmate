@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 40px 0;
 }
 
 .result-calculator p {
@@ -44,4 +45,8 @@
   color: var(--secondary-color);
   text-align: center;
   padding: 20px;
+}
+
+.container-warning-paint p {
+  font-weight: 500;
 }

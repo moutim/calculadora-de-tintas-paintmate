@@ -7,7 +7,7 @@ import { WallContext } from '../../context/CalculatorContext';
 import api from '../../../../utils/axios';
 
 const Calculator: React.FC = () => {
-  const { walls } = useContext(WallContext);
+  const { walls, filledFields } = useContext(WallContext);
   const [resultCalc, setResultCalc] = useState(null);
 
   const calculate = async () => {
@@ -25,23 +25,34 @@ const Calculator: React.FC = () => {
 
       <div className='container-wall-inputs'>
         <WallInput 
-          title='Primeira parede'
+          title='1° Parede'
           wallIndex={ 0 }
         />
         <WallInput 
-          title='Segunda parede'
+          title='2° Parede'
           wallIndex={ 1 }
         />
         <WallInput 
-          title='Terceira parede'
+          title='3° Parede'
           wallIndex={ 2 }
         />
         <WallInput 
-          title='Quarta parede'
+          title='4° Parede'
           wallIndex={ 3 }
         />
+      </div>
 
-        <button className='button button-selected' onClick={ calculate }>Calcular</button>
+      <div className='container-button-calc'>
+        {
+          !filledFields && <p className='error-calc-message'>Preencha todos os campos de altura e largura para ativar o botão.</p>
+        }
+        <button 
+          className={`button ${filledFields ? 'button-selected' : 'button-not-selected'} `}
+          onClick={ calculate }
+          disabled={ !filledFields }
+        >
+          Calcular
+        </button>
       </div>
 
       {
