@@ -12,7 +12,7 @@
   - **Frontend**: React, Typescript, Context API, Axios, HTML, CSS, Cypress (testes E2E), ESLint 🛠️📦
   - **Backend**: NestJS, Typescript, Swagger, Jest (testes E2E).
 
-### 2. Estrutura do Projeto
+# 2. Estrutura do Projeto
 - **Arquitetura**: Tanto o backend quanto o frontend estão estruturados em módulos para facilitar a escalabilidade e organização.
   - **Frontend**: Dividido em módulos, componentes e páginas.
   - **Backend**: Dividido em módulos, controladores, serviços e módulos.
@@ -81,10 +81,7 @@
 
 - **Estilos**: A estilização foi feita principalmente com CSS, utilizando uma abordagem modular para escalabilidade.
 
-
-
-
-# 6. Testes
+# 5. Testes
 
 - **Testes End-to-End do FrontEnd**:
   - **Framework Utilizado**: Cypress
