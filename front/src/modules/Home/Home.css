@@ -31,3 +31,21 @@
   justify-content: center;
   gap: 30px;
 }
+
+@media screen and (max-width: 950px) {
+  .article-title {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container-title-texts h2  {
+    font-size: 2.7rem;
+  }
+
+  .container-title-texts p {
+    font-size: 1.1rem;
+  }
+}
+
+

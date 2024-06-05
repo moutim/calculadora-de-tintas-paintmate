@@ -48,3 +48,15 @@
   margin: 15px 0;
   font-weight: 500;
 }
+
+@media screen and (max-width: 800px) {
+  .container-inputs-wall > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container-inputs-wall div:nth-child(2) {
+    gap: 10px;
+  }
+}
