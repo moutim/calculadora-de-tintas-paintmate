@@ -50,3 +50,18 @@
 .container-warning-paint p {
   font-weight: 500;
 }
+
+
+@media screen and (max-width: 800px) {
+  .container-paint-bucket {
+    flex-wrap: wrap;
+  }
+
+  .container-paint-bucket figure figcaption {
+    font-size: 15px;
+  }
+
+  .container-paint-bucket figure img {
+    width: 60px;
+  }
+}
